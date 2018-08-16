@@ -1,0 +1,27 @@
+
+.background-image {
+    background-image: url("https://bit.ly/2MhQ5a4");
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1; 
+}
+
+body {
+    display: flex;
+
+}
+h1, h5 {
+    font-family: 'Ubuntu', sans-serif;
+    display: -webkit-inline-flex;
+    padding-left: 5%;
+}
+
+.sub-heading {
+    display: flex;
+    padding-left: 3%
+}
+
+

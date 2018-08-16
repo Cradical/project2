@@ -17,8 +17,8 @@ $(document).ready(function () {
     // ---------------------------
     // LOCAL STORAGE RECALL
     // ---------------------------
-    lonValue.value = JSON.parse(localStorage.getItem('longitude')) || {}
-    latValue.value = JSON.parse(localStorage.getItem('latitude')) || {}
+    lonValue.value = JSON.parse(localStorage.getItem('longitude')) || ""
+    latValue.value = JSON.parse(localStorage.getItem('latitude')) || ""
     // ---------------------------
 
     apiButton.addEventListener('click', function (e) {

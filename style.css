@@ -24,4 +24,15 @@ h1, h5 {
     padding-left: 3%
 }
 
+#info-display {
+    background-color: white;
+    opacity: .9;
+    text-rendering: auto;
+}
 
+#form_input_coords {
+    background-color: white;
+    opacity: .9;
+    text-rendering: auto;
+    font-weight: bolder;
+}

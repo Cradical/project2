@@ -6,7 +6,8 @@ $(document).ready(function () {
     const forecast_display = document.querySelector('#weather-forecast');
     const date_display = document.querySelector('#date');
     const temp_display = document.querySelector('#temp-reading');
-    console.log(temp_display);
+    const local_name_display = document.querySelector('#location-name');
+    // console.log('location name: ', local_name_display);
     const apiButton = document.querySelector('#forecast-generator');
     const save_location = document.querySelector('#location_save');
     // ------------------
@@ -42,6 +43,21 @@ $(document).ready(function () {
         // ----------------------------
         function weather_info_process(result) {
 
+            let locationName = [];
+            locationName.push(result['city']['name']);
+            locationName.push(result['city']['country']);
+            console.log('locationName: ', locationName);
+            
+
+            locationName.forEach(function (element) {
+                var location_info_display = document.createElement('span');
+                location_info_display.setAttribute('value', element);
+                location_info_display.setAttribute('id', element);
+                location_info_display.setAttribute('class', 'pl-1 font-weight-bold text-dark text-right');
+                location_info_display.textContent = element;
+                local_name_display.appendChild(location_info_display);
+            })
+
             let weatherForecast = [];
             for (let i = 5; i < result['list'].length; i = i + 8) {
                 weatherForecast.push(result['list'][i]['weather'][0]['description'])
@@ -73,7 +89,7 @@ $(document).ready(function () {
             let temp = [];
             for (let k = 5; k < result['list'].length; k = k + 8) {
                 temp.push(result['list'][k]['main']['temp'])
-                console.log(temp);
+                // console.log(temp);
             }
 
             temp.forEach(function (element) {
